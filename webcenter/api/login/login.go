@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 	"log"
 	"msProject.com/common"
 	"msProject/webcenter/pkg/dao"
@@ -37,6 +38,9 @@ func (hl *HandleLogin) GetCaptcha(ctx *gin.Context) {
 	go func() {
 		time.Sleep(2 * time.Second)
 		log.Println("调用短信平台发送短信")
+		zap.L().Info("短信平台调用成功 info")
+		zap.L().Error("短信平台调用成功 error")
+		zap.L().Debug("短信平台调用,debug")
 		c, concel := context.WithTimeout(context.Background(), 2*time.Second)
 		defer concel()
 		err := hl.cache.Put(c, "REGISTER_"+mobile, code, 15*time.Minute)
