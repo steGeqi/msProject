@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"msProject/webcenter/api/user"
+	"msProject/webcenter/api/login"
 )
 
 type Router interface {
@@ -22,5 +22,5 @@ func (RegisterRouter) Route(router Router, r *gin.Engine) {
 
 func InitRouter(r *gin.Engine) {
 	router := New()
-	router.Route(&user.RouterUser{}, r)
+	router.Route(&login.RouterLogin{}, r)
 }
