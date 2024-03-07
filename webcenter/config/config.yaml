@@ -1,0 +1,12 @@
+zap:
+  debugFileName: "D:\\msProject\\project_ws\\logs\\debug\\project-debug.log"
+  infoFileName: "D:\\msProject\\project_ws\\logs\\info\\project-info.log"
+  warnFileName: "D:\\msProject\\project_ws\\logs\\error\\project-error.log"
+  maxSize: 500,
+  maxAge: 28,
+  MaxBackups: 3
+redis:
+  host: "82.157.190.38"
+  port: 6379
+  password: ""
+  db: 0

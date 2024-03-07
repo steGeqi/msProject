@@ -3,6 +3,7 @@ package dao
 import (
 	"context"
 	"github.com/go-redis/redis/v8"
+	"msProject/webcenter/config"
 	"time"
 )
 
@@ -13,11 +14,7 @@ type RedisCache struct {
 }
 
 func init() {
-	rdb := redis.NewClient(&redis.Options{
-		Addr:     "82.157.190.38:6379",
-		Password: "",
-		DB:       0,
-	})
+	rdb := redis.NewClient(config.AppConf.InitRedisOptions())
 	Rc = &RedisCache{
 		rdb: rdb,
 	}
