@@ -17,7 +17,6 @@ func New() RegisterRouter {
 
 func (RegisterRouter) Route(router Router, r *gin.Engine) {
 	router.Register(r)
-
 }
 
 func InitRouter(r *gin.Engine) {

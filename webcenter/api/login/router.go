@@ -7,6 +7,6 @@ type RouterLogin struct {
 
 func (*RouterLogin) Register(r *gin.Engine) {
 	g := r.Group("/project/login")
-	h := HandleLogin{}
+	h := New()
 	g.POST("/getCaptcha", h.GetCaptcha)
 }
